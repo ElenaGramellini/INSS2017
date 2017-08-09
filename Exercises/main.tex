@@ -6,6 +6,7 @@
 \usepackage{epsfig}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{cancel}
 
 %\usepackage{natbib} \setlength{\bibsep}{4.0pt}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -83,17 +84,88 @@ Authors: Elena Gramellini\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ABSTRACT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Table of content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 
-
+\newpage
 \section{Ex 1.1}
+Charge pions decay almost 100\% of the times in $\pi\rightarrow\mu\nu_{\mu}$. \\
+(1) In the rest frame of the pion, compute the muon energy as a function of the muon mass $m_{\mu}$, the pion mass $m_{\pi}$ and the neutrino mass $m_{\nu}$.\\
+(2) What is the absolute value of the muon (tri)momentum?\\
+(3) What is the relative change of muon momentum between $m_{\nu} = 0$ MeV and $m_{\nu} = 0.1$ MeV?\\
+
+\subsection{Ex 1.1: answer}
+For every massive particle :
+\begin{equation} E^2 =  p^2 + m^2 \end{equation} 
+cause if nature had to choose an invariant, she probably chose $c=1$.\\
+
+Total energy and momentum in the pion rest frame before decay:
+$$ (E_{\pi},  \vec{p}_{\pi}) = (m_{\pi}, 0)  $$
+
+Total energy and momentum in the pion rest frame after decay:
+$$ (E_{\nu}+E_{\mu}, \vec{p}_{\nu}+\vec{p}_{\mu}) = (m_{\pi}, 0)  $$
+So in order to conserve energy we have:
+\begin{equation} E_{\nu}+E_{\mu} = m_{\pi} \end{equation} 
+and in order to conserve momentum we have:
+$$ \vec{p}_{\nu}+\vec{p}_{\mu} = 0 .$$
+The neutrino and the muon will decay back to back to conserve momentum. We'll just simply choose the axis of decay for this particle to reduce the problem to a one dimension.
+So this last equation becomes 
+$$ p_{\nu}+p_{\mu} = 0 $$ so
+\begin{equation} p_{\nu} = -p_{\mu}  .\end{equation} 
+
+Let's play a bit with equation (2)
+$$ E_{\nu}+E_{\mu} = m_{\pi} \Rightarrow E_{\nu} = m_{\pi} - E_{\mu}$$ 
+$$\Rightarrow$$ 
+$$E^2_{\nu} = (m_{\pi} - E_{\mu})^2 $$ 
+so using equation (1) and (3)
+\begin{equation} E^2_{\nu} = p^2_{\nu} + m^2_{\nu} = p^2_{\mu} + m^2_{\nu}  = (m_{\pi} - E_{\mu})^2 = m^2_{\pi} - 2m_{\pi}E_{\mu} + E^2_{\mu}  \end{equation} 
+$$E^2_{\mu} - m^2_{\mu} + m^2_{\nu}  = m^2_{\pi} - 2m_{\pi}E_{\mu} + E^2_{\mu}  $$
+$$E^2_{\mu} - m^2_{\mu} + m^2_{\nu}  = m^2_{\pi} - 2m_{\pi}E_{\mu} + E^2_{\mu}  $$
+$$ - m^2_{\mu} + m^2_{\nu}  = m^2_{\pi} - 2m_{\pi}E_{\mu}   $$
+$$ 2m_{\pi}E_{\mu}  = m^2_{\pi} + m^2_{\mu} - m^2_{\nu} $$
+So, as an answer to the first question, we have:
+\begin{equation} E_{\mu}  = \frac{1}{2m_{\pi}}(m^2_{\pi} + m^2_{\mu} - m^2_{\nu}).  \end{equation} 
+A couple of additional manipulation lead to an absolute value for the (tri)momentum of :
+$$ E_{\mu} = \sqrt{p^2_{\mu}+m^2_{\mu}} = \frac{1}{2m_{\pi}}(m^2_{\pi} + m^2_{\mu} - m^2_{\nu}) $$
+$$ p^2_{\mu}+m^2_{\mu} = \frac{1}{4m^2_{\pi}}(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2 $$
+$$ p^2_{\mu} = \frac{1}{4m^2_{\pi}}(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2 - m^2_{\mu}$$
+$$p_{\mu} = \sqrt{\frac{(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2}{4m^2_{\pi}} - m^2_{\mu}}$$
+\begin{equation} p_{\mu} = m_{\mu}\sqrt{\frac{(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2}{4m^2_{\pi}m^2_{\mu}} - 1}\end{equation} 
+
+So, the relative change in momentum from $m^2_{\nu} = 0$ and $m^2_{\nu} \neq 0$ is:
+\begin{equation} \Delta p_{\mu}/p_{\mu} = \frac{p_{\mu,0} - p_{\mu,m_{\nu}}}{p_{\mu,m_{\nu} }} =  \frac{p_{\mu,0}}{p_{\mu,m_{\nu}}} -1 = 
+\frac{m_{\mu}\sqrt{\frac{(m^2_{\pi} + m^2_{\mu})^2}{4m^2_{\pi}m^2_{\mu}} - 1} }{m_{\mu}\sqrt{\frac{(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2}{4m^2_{\pi}m^2_{\mu}} - 1}} - 1\end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} 
+\frac{\sqrt{\frac{(m^2_{\pi} + m^2_{\mu})^2}{4m^2_{\pi}m^2_{\mu}} - 1} }{\sqrt{\frac{(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2}{4m^2_{\pi}m^2_{\mu}} - 1}} - 1\end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+\sqrt{\frac{(m^2_{\pi} + m^2_{\mu})^2 - 4m^2_{\pi}m^2_{\mu}  }{(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2 - 4m^2_{\pi}m^2_{\mu}}} - 1\end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+\sqrt{\frac{(m^2_{\pi} - m^2_{\mu})^2 }{(m^2_{\pi} + m^2_{\mu} - m^2_{\nu})^2 - 4m^2_{\pi}m^2_{\mu}}} - 1\end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+\sqrt{\frac{(m^2_{\pi} - m^2_{\mu})^2 }{(m^2_{\pi} + m^2_{\mu})^2 -2(m^2_{\pi} + m^2_{\mu})m^2_{\nu}+ m^4_{\nu} - 4m^2_{\pi}m^2_{\mu}}} - 1\end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+\sqrt{\frac{(m^2_{\pi} - m^2_{\mu})^2 }{(m^2_{\pi} - m^2_{\mu})^2 -2(m^2_{\pi} + m^2_{\mu})m^2_{\nu}+ m^4_{\nu} }} - 1\end{equation} 
 
 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+\sqrt{\frac{1}{1 -\frac{2(m^2_{\pi} + m^2_{\mu})m^2_{\nu}+ m^4_{\nu} } {(m^2_{\pi} - m^2_{\mu})^2}} } - 1\end{equation} 
+We can taylor expand to
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+1 + \frac{2(m^2_{\pi} + m^2_{\mu})m^2_{\nu}+ m^4_{\nu} }{2(m^2_{\pi} - m^2_{\mu})^2} - 1\end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+\frac{2(m^2_{\pi} + m^2_{\mu})m^2_{\nu}+ m^4_{\nu} }{2(m^2_{\pi} - m^2_{\mu})^2} \end{equation} 
+
+\begin{equation} \Delta p_{\mu}/p_{\mu} =
+m^2_{\nu}\frac{(m^2_{\pi} + m^2_{\mu})}{{(m^2_{\pi} - m^2_{\mu})^2}} + \frac{m^4_{\nu} }{2(m^2_{\pi} - m^2_{\mu})^2} \end{equation} 
+
+
+ 
 \end{document}
